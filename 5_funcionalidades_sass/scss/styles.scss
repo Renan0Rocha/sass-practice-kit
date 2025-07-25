@@ -1,8 +1,11 @@
+@charset "UTF-8";
+
 @import 'variables';
 @import 'button';
 @import 'mixins';
 @import 'plugins';
 @import 'functions';
+
 
 body {
   margin: 20px;
@@ -43,27 +46,72 @@ h2 {
   $mag: 50px;
   @include espacamento($pad, $mag);
   @include custom-border(double, gold, 3px);
+  @include colors($font: gold);
   @extend %font-pattern;
 }
 
 $medida: 4;
 
 .container-menor {
-  width: 100px * ($medida / 2);
-  @include custom-border(solid, green);
+  width: 100px * ($medida + 2);
+  border: custom-border-function();
 }
 
 .container-maior {
   @include custom-border(solid, red);
   width: 25rem * $medida;
+  border: custom-border-function(2);
 }
 
 .fonte-pequena {
   font-size: 5px;
   color: text-color(5);
+  border: custom-border-function(3);
 }
 
 .fonte-grande {
   font-size: 25px;
   color: text-color(25);
+  border: custom-border-function(32);
 }
+
+.test-1 {
+  width: custom_width();
+  background-color: red;
+}
+
+.test-2 {
+  width: custom_width($width: 1000px);
+  background-color: green;
+}
+
+.test-3 {
+  width: custom_width($division: 2.5);
+  padding: 20px;
+  background-color: calc-func(5, 5);
+}
+
+$fonts: 40px, 60px, 100px;
+
+@each $font in $fonts {
+  .title-#{$font} {
+    font-size: $font;
+    line-height: $font * 1.2;
+  }
+}
+
+@for $i from 1 through 3 {
+  .p-#{$i} {
+    @if $i == 1 {
+      color: lightblue;
+    } @else if $i == 2 {
+      color: lightgreen;
+    } @else {
+      color: teal;
+    }
+    background-color: #000;
+  }
+}
+
+
+
