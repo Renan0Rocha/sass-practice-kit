@@ -1,0 +1,45 @@
+.color-1 {
+  color: #84717f;
+  background-color: #8471ed;
+}
+
+.color-2 {
+  background-color: rgb(48.5625, 23.625, 186.375);
+}
+
+.color-3 {
+  background-color: rgb(181.2, 169.8, 244.2);
+}
+
+.color-4 {
+  background-color: rgb(73.8, 85.2, 10.8);
+}
+
+.color-5 {
+  background-color: rgb(48.5, 48, 49);
+}
+
+.color-6 {
+  background-color: #373737;
+}
+
+.color-7 {
+  background-color: #4F1F33;
+}
+.color-7:hover {
+  background-color: rgb(228.5090909091, 187.4909090909, 204.5818181818);
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h1 {
+  border: 2px solid red;
+}
+
+h1 {
+  transition: 1s;
+}
+
+/*# sourceMappingURL=styles.css.map */
